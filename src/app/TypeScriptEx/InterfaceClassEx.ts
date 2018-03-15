@@ -5,6 +5,10 @@ export interface IBook {
     readonly BookAuthor: string;
 }
 
+export interface IBook2 extends IBook {
+    ISBN: string;
+}
+
 export class Book implements IBook {
     BookName?: string;
     readonly BookAuthor: string = "scsc";
@@ -16,20 +20,46 @@ export class Book implements IBook {
         //console.log(bookMaster.BookId);
 
         let bookChild: BookChild = new BookChild(3);
+
+        let version: number = BookChild.version;
     }
 }
 
-export class BookMaster {
-    //private BookId:number;
-    protected BookId: number;
-    constructor(bookId: number) {
-        this.BookId = bookId;
-    }
-}
+// export class BookMaster {
+//     //private BookId:number;
+//     protected BookId: number;
+//     constructor(bookId: number) {
+//         this.BookId = bookId;
+//     }
+// }
 
-export class BookChild extends BookMaster {
+// export class BookChild extends BookMaster implements IBook2 {
+//     static version:number=25.23;
+
+//     ISBN: string;
+//     BookId: number;
+//     BookName?: string;
+//     GetBookDetails(a: number, b: string) {
+//         console.log("");
+//     }
+//     BookAuthor: string;
+//     constructor(bookId: number) {
+//         super(bookId);
+//     }
+// }
+
+export class BookChild implements IBook2 {
+    static version: number = 25.23;
+
+    ISBN: string;
+    BookId: number;
+    BookName?: string;
+    GetBookDetails(a: number, b: string) {
+        console.log("");
+    }
+    BookAuthor: string;
     constructor(bookId: number) {
-        super(bookId);
+        //super(bookId);
     }
 }
 
