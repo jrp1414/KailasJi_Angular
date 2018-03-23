@@ -25,13 +25,13 @@ export class Book implements IBook {
     }
 }
 
-// export class BookMaster {
-//     //private BookId:number;
-//     protected BookId: number;
-//     constructor(bookId: number) {
-//         this.BookId = bookId;
-//     }
-// }
+export class BookMaster {
+    //private BookId:number;
+    protected BookId: number;
+    constructor(bookId: number) {
+        this.BookId = bookId;
+    }
+}
 
 // export class BookChild extends BookMaster implements IBook2 {
 //     static version:number=25.23;

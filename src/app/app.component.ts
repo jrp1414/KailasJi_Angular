@@ -14,8 +14,13 @@ import { Component } from "@angular/core";
   ]
 })
 export class AppComponent {
-  title:string="Kailasji, GautamJi";
-  Names=[
-    "Ram", "Manoj","Amol","Kailas","Gautam"
-  ];
+  title:string;
+  Names:string[];
+
+  constructor(){
+    this.title="Kailasji, GautamJi";
+    this.Names==[
+      "Ram", "Manoj","Amol","Kailas","Gautam"
+    ];
+  }
 }

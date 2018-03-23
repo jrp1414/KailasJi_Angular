@@ -59,3 +59,15 @@ class TestClass {
     }
 
 }
+
+class TestClass2 {
+    
+    someMethod(param1:number,param2:string|number):void{
+        if (typeof param2=="string") {
+            console.log("Parameter combination 1 working");
+        }else if (typeof param2=="number") {
+            console.log("Parameter combination 2 working");
+        }
+    }
+
+}

@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div *ngIf="Products.length > 5" class="alert alert-info">We have more than 5 Products in the list</div>
+    <button class="btn btn-primary" (click)="ShowHideImages()">{{ShowHideMsg}} Images</button>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Name</th>
+                <th>Product Code</th>
+                <th>Price</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pr of Products">
+                <td>{{pr.ProductId}}</td>
+                <td (click)="NameClicked(pr)">{{pr.Name}}</td>
+                <!-- <td>{{pr.ProdCode}}</td> -->
+                <td [id]="pr.ProdCode">{{pr.ProdCode}}</td>
+                <td>{{pr.Price}}</td>
+                <td><img *ngIf="FlagShowHide" src="{{pr.Image}}" style="width:50px;height:50px"/></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="alert alert-success">{{2+3}}</div>
+<div class="alert alert-success">{{getMultiplyResult(2,3)}}</div>
